@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O meni</title>
+    <style>
+        body {
+            font-family: Kanit, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('pozadina.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+			font-size: 22px;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            background-color: rgba(255,255,255,0.9);
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .slider img {
+            width: 100%;
+            display: none;
+            border-radius: 8px;
+        }
+        .slider img.active {
+            display: block;
+        }
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .slider-button:hover {
+            background-color: rgba(0,0,0,0.7);
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Početna</a>
+        <a href="o_meni.html">O meni</a>
+        <a href="vjezbe.html">Vježbe</a>
+        <a href="video.html">Video</a>
+    </nav>
+
+    <main>
+        <h1>O meni</h1>
+        <p>Dolazim iz Svetoga Juraj, to je malo mjesto pokraj Senja. Završio sam Školu za primijenjenu umjetnost u Rijeci, smjer grafički dizajn, a završni rad sam 
+        izradio u tehnici suhe igle koja je ujedno i meni najdraža grafička tehnika. U slobodno vrijeme volim
+        provoditi vrijeme vani, trenirati ili stvarati muziku u programu Fl Studio 20. Ljeti volim roniti, loviti ribu,
+        kupati se.</p>
+		
+		<h2>Moja glazba i interesi:</h2>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/1c5lyFdxquU
+" 
+frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
+<p> Glazba kojoj se stalno vraćam:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/n5BYkQawrHM"
+" 
+frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
+
+
+        <h2>Moji radovi</h2>
+        <div class="slider">
+            <img src="1.jpg" alt="Opis slike" class="active">
+            <img src="2.jpg" alt="Opis slike">
+            <img src="3.jpg" alt="Opis slike">
+            <img src="4.jpg" alt="Opis slike">
+            <img src="5.png" alt="Opis slike">
+            <img src="6.jpg" alt="Opis slike">
+            <img src="7.jpg" alt="Opis slike">
+            <button class="slider-button prev">&#10094; Natrag</button>
+            <button class="slider-button next">Sljedeći &#10095;</button>
+        </div>
+    </main>
+
+    <script>
+        let index = 0;
+        const slike = document.querySelectorAll('.slider img');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+
+        function prikaziSliku(i) {
+            slike.forEach((img) => img.classList.remove('active'));
+            slike[i].classList.add('active');
+        }
+
+        function sljedećaSlika() {
+            index = (index + 1) % slike.length;
+            prikaziSliku(index);
+        }
+
+        function prethodnaSlika() {
+            index = (index - 1 + slike.length) % slike.length;
+            prikaziSliku(index);
+        }
+
+        nextBtn.addEventListener('click', sljedećaSlika);
+        prevBtn.addEventListener('click', prethodnaSlika);
+
+        
+    </script>
+</body>
+</html>

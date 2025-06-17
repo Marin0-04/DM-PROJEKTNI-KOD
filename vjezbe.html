@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vježbe</title>
+	<link rel="stylesheet" href="stil.css">
+    <style>
+        body {
+            font-family: Kanit, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('pozadina.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            background-color: rgba(255,255,255,0.9);
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        h1 {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Početna</a>
+        <a href="o_meni.html">O meni</a>
+        <a href="vjezbe.html">Vježbe</a>
+        <a href="video.html">Video</a>
+    </nav>
+
+    <main>
+	<h1>Vježbe</h1>
+        <h2>Vježbe 1-4</h2>
+		<p>Vježbe 1-4 smo radili u FontForge-u i Adobe illustratoru. Kod vježbi vezanih za 
+		font smo morali napisati vlastito ime, i prezime te kurente i verzale slova č,ć,š,đ,ž. 
+		Zatim smo radili Bezierovu krivulju, u kojoj smo morali napisati vlastie inicijale te  
+		izraditi vlastiti dizajn s krivuljama pomoću Blend alata u AI. Kod vježbi vektorske grafike 
+		smo naučili primijenjivati različite gradijente te koristiti transparenciju i transformacije. </p>
+        
+<div class="gallery-container">
+  <button class="nav-button" id="prevBtn" onclick="changeSlide(-1)">‹ Natrag</button>
+  <img id="galleryImage" class="gallery-image" src="" alt="Slika">
+  <button class="nav-button" id="nextBtn" onclick="changeSlide(1)">Sljedeći ›</button>
+  <div id="imageDescription" class="description"></div>
+</div>
+<script>const images = [
+  { src: "DM-PROJEKTNI/V1.jpg", opis: "Vježba 1" },
+  { src: "DM-PROJEKTNI/V2.jpg", opis: "Vježba 2" },
+  { src: "DM-PROJEKTNI/V2.2.jpg", opis: "Vježba 2.2" },
+  { src: "DM-PROJEKTNI/V3.jpg", opis: "Vježba 3" },
+  { src: "DM-PROJEKTNI/V3.2.jpg", opis: "Vježba 3.2" },
+  { src: "DM-PROJEKTNI/V4.jpg", opis: "Vježba 4" },
+  { src: "DM-PROJEKTNI/V4.2.jpg", opis: "Vježba 4.2" },
+];
+
+let currentIndex = 0;
+
+function showImage(index) {
+  const img = document.getElementById("galleryImage");
+  const desc = document.getElementById("imageDescription");
+
+  if (index < 0) currentIndex = images.length - 1;
+  else if (index >= images.length) currentIndex = 0;
+  else currentIndex = index;
+
+  img.src = images[currentIndex].src;
+  desc.textContent = images[currentIndex].opis;
+}
+
+function changeSlide(n) {
+  showImage(currentIndex + n);
+}
+
+// Prikaz prve slike
+showImage(currentIndex);
+</script>
+<h2>Vježbe 5-7</h2>
+<p>Naučili smo koristiti različite tehnike digitalnog retuširanja i koloriranja u Photoshopu. 
+Radili smo selekcije pomoću alata poput Lasso, Magnetic Lasso i Quick Mask, te smo učili kako 
+spremiti selekcije za ponovnu upotrebu. U retuširanju smo koristili kloniranje (Clone Stamp, Healing Brush)
+ i zamućivanje (Dust & Scratches) za uklanjanje oštećenja, kao i lokalne i globalne korekcije boja i 
+ svjetline pomoću Burn/Dodge, Levels i Brightness/Contrast.Naučili smo i kako raditi fotomontaže kombinirajući dijelove različitih slika, 
+ te kako primijeniti realistične sjene i perspektivu za bolje uklapanje elemenata.</p>
+
+<div class="gallery-container">
+  <button class="nav-button" id="prevBtn2" onclick="changeSlide2(-1)">‹ Natrag</button>
+  <img id="galleryImage2" class="gallery-image" src="" alt="Slika">
+  <button class="nav-button" id="nextBtn2" onclick="changeSlide2(1)">Sljedeći ›</button>
+  <div id="imageDescription2" class="description"></div>
+</div>
+
+<script>
+  const images2 = [
+    { src: "DM-PROJEKTNI/V5.jpg", opis: "Vježba 5" },
+    { src: "DM-PROJEKTNI/V5.2.jpg", opis: "Vježba 5.2" },
+    { src: "DM-PROJEKTNI/V6.jpg", opis: "Vježba 6" },
+    { src: "DM-PROJEKTNI/V6.2.jpg", opis: "Vježba 6.2" },
+    { src: "DM-PROJEKTNI/V7.jpg", opis: "Vježba 7." }
+  ];
+
+  let currentIndex2 = 0;
+
+  function showImage2(index) {
+    const img = document.getElementById("galleryImage2");
+    const desc = document.getElementById("imageDescription2");
+
+    if (index < 0) currentIndex2 = images2.length - 1;
+    else if (index >= images2.length) currentIndex2 = 0;
+    else currentIndex2 = index;
+
+    img.src = images2[currentIndex2].src;
+    desc.textContent = images2[currentIndex2].opis;
+  }
+
+  function changeSlide2(n) {
+    showImage2(currentIndex2 + n);
+  }
+
+  // Prikaz prve slike odmah
+  showImage2(currentIndex2);
+</script>
+<h2>Vježbe 8-9</h2>
+<p>Kod vježbi 8 i 9 smo učili raditi cinemagrafe koristeći Photoshop i DaVinci Resolve. Također
+smo koristili i programe kako bi naučili uređivati video. Rezali smo isječke, micali zvuk, mijenjali boju videa te radili
+tranzicije od kojih je jedna fade in/out. Naučili smo i stavljati tekst, taj isti tekst rotirati, pomicati s lijeva na desno...</p>
+
+<div class="gallery-container">
+  <button class="nav-button" id="prevBtn3" onclick="changeSlide3(-1)">‹ Natrag</button>
+  <img id="galleryImage3" class="gallery-image" src="" alt="Slika">
+  <button class="nav-button" id="nextBtn3" onclick="changeSlide3(1)">Sljedeći ›</button>
+  <div id="imageDescription3" class="description"></div>
+</div>
+
+<script>
+  const images3 = [
+    { src: "DM-PROJEKTNI/V8.2.gif", opis: "Vježba 8" },
+    { src: "DM-PROJEKTNI/V8.gif", opis: "Vježba 8.2" },
+    { src: "DM-PROJEKTNI/V9.gif", opis: "Vježba 9" },
+    { src: "DM-PROJEKTNI/V9.2.gif", opis: "Vježba 9.2" },
+  ];
+
+  let currentIndex3 = 0;
+
+  function showImage3(index) {
+    const img = document.getElementById("galleryImage3");
+    const desc = document.getElementById("imageDescription3");
+
+    if (index < 0) currentIndex3 = images3.length - 1;
+    else if (index >= images3.length) currentIndex3 = 0;
+    else currentIndex3 = index;
+
+    img.src = images3[currentIndex3].src;
+    desc.textContent = images3[currentIndex3].opis;
+  }
+
+  function changeSlide3(n) {
+    showImage3(currentIndex3 + n);
+  }
+
+  // Prikaz prve slike odmah
+  showImage3(currentIndex3);
+</script>
+<h2>Projektni zadaci</h2>
+<p>Do sada smo imali tri projektna zadatka (treći je odvojen i nalazi se na vlastitom dijelu pod nazivom video.)
+Prvi projektni zadatak smo radili u vektorskoj grafici, osobno sam radio u programu Adobe Illustrator. Svatko od nas je
+dobio različitu fotografiju na kojoj smo trebali primijeniti stvari koje smo naučili kroz vježbe 1-4. Ja sam dobio
+sliku slonova. Napisao sam tekst priroda sa fontom kojeg sam napravio u prvoj vježbi, nakon toga smo sa različitim alatima
+i gradijentima morati rekreirati sliku koju smo dobili.</p>
+<p>Drugi projektni zadatak smo radili u programima pikselgrafike, osobno sam radio u programu Adobe Photoshop.
+U ovom projektnom zadatku morali smo koristiti baznu fotografiju i na njoj primijeniti tehnike retuširanja, 
+kao i uklopiti elemente iz najmanje pet drugih fotografija preciznim selekcijama. Uz to, trebali smo dodati 
+minimalno tri vlastita elementa, uključujući jednu fotografiju na kojoj smo mi. Naučili smo koristiti alate za 
+retuširanje, selekcije putem kanala, transformacije (uključujući perspektivu), maske slojeva, koloriranje, sjene, 
+transparenciju slojeva te umetanje teksta pomoću alata za perspektivu.</p>
+
+<div class="gallery-container">
+  <button class="nav-button" id="prevBtn4" onclick="changeSlide4(-1)">‹ Natrag</button>
+  <img id="galleryImage4" class="gallery-image" src="" alt="Projektna slika">
+  <button class="nav-button" id="nextBtn4" onclick="changeSlide4(1)">Sljedeći ›</button>
+  <div id="imageDescription4" class="description"></div>
+</div>
+
+<script>
+  const images4 = [
+    { src: "DM-PROJEKTNI/Projektni zadatak 1.jpg", opis: "Projektni zadatak 1" },
+    { src: "DM-PROJEKTNI/Projektni zadatak 2.jpg", opis: "Projektni zadatak 2" }
+  ];
+
+  let currentIndex4 = 0;
+
+  function showImage4(index) {
+    const img = document.getElementById("galleryImage4");
+    const desc = document.getElementById("imageDescription4");
+
+    if (index < 0) currentIndex4 = images4.length - 1;
+    else if (index >= images4.length) currentIndex4 = 0;
+    else currentIndex4 = index;
+
+    img.src = images4[currentIndex4].src;
+    desc.textContent = images4[currentIndex4].opis;
+  }
+
+  function changeSlide4(n) {
+    showImage4(currentIndex4 + n);
+  }
+
+  // Prikaz prve slike odmah
+  showImage4(currentIndex4);
+</script>
+
+    </main>
+
+</body>
+</html>
