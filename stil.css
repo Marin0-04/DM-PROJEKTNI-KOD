@@ -5,8 +5,15 @@ body {
     color: #fff;  
 
 }
+@font-face {
+    font-family: 'MarinoZunic';
+    src: url('./fonts/MarinoZunic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .font1 {
-    font-family: Kanit, sans-serif;
+    font-family: Rubik, sans-serif;
 	font-size: 24px;
 }
 .gallery-container {
